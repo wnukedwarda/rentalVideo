@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>VideoRental</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!--(if target dev)><!-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--<!(endif)-->
+    <!--(if target dist)>
+    <link rel="stylesheet" href="css/style.min.css">
+    <!(endif)-->
+</head>
+<body>
+
+<div class="app-wrapper">
+
+    <div class="app-sidebar">
+
+        <div class="app-logo">
+            <a href="/">
+                <img src="images/logo.png" alt="">
+            </a>
+        </div>
+
+        <div class="app-sidebar-sep">
+            <i class="fa fa-ellipsis-h"></i>
+        </div>
+
+        <div class="app-sidebar-nav">
+            <a href="/movies" class="active" pushstate-link data-tabs="video-tabs">
+                <i class="fa fa-play-circle-o"></i>
+                Baza filmów
+            </a>
+
+                <div class="app-sidebar-sep">
+                    <i class="fa fa-ellipsis-h"></i>
+                </div>
+
+            <a href="/rents" pushstate-link data-tabs="rental-tabs">
+                <i class="fa fa-calendar"></i>
+                Wypożyczalnia
+            </a>
+        </div>
+
+    </div>
+
+    <div class="app-main">
+
+        <div class="app-header">
+
+        </div>
+
+        <div class="app-main-tabs active" id="video-tabs">
+            <a href="/movies" class="active" pushstate-link>
+                <i class="fa fa-film"></i>
+                Filmy
+            </a>
+            <a href="/actors" pushstate-link>
+                <i class="fa fa-users"></i>
+                Aktorzy
+            </a>
+            <a href="/categories" pushstate-link>
+                <i class="fa fa-list-ol"></i>
+                Kategorie
+            </a>
+        </div>
+
+        <div class="app-main-tabs" id="rental-tabs">
+            <a href="/rents" pushstate-link>
+                <i class="fa fa-thumbs-o-up"></i>
+                Wypożyczenia
+            </a>
+            <a href="/clients" pushstate-link>
+                <i class="fa fa-user"></i>
+                Klienci
+            </a>
+        </div>
+
+        <div class="app-content-wrapper">
+
+            <div class="app-content">
+
+            </div>
+
+            <div class="app-content-sidebar">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div><!-- /.app-wrapper -->
+
+<!--(if target !dist)><!-->
+<script src="js/libs/jquery.js"></script>
+<script src="js/libs/underscore.js"></script>
+<script src="js/libs/backbone.js"></script>
+<script src="js/libs/backbone.stickit.js"></script>
+<script src="js/libs/pushstate-links.js"></script>
+<script src="js/libs/magicsuggest.js"></script>
+<script src="js/libs/beatpicker.js"></script>
+<script src="js/libs/zebra-dialog.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/moment.pl.js"></script>
+
+<script src="templates/templates.js"></script>
+
+<script src="js/App.js"></script>
+
+<script src="js/Views/NavigationView.js"></script>
+<script src="js/Views/ListPaginationView.js"></script>
+<script src="js/Views/ListActionsView.js"></script>
+
+<script src="js/Models/MovieModel.js"></script>
+<script src="js/Collections/MoviesListCollection.js"></script>
+<script src="js/Views/MovieListItemView.js"></script>
+<script src="js/Views/MoviesListView.js"></script>
+
+<script src="js/Models/ActorModel.js"></script>
+<script src="js/Collections/ActorsListCollection.js"></script>
+<script src="js/Views/ActorListItemView.js"></script>
+<script src="js/Views/ActorsListView.js"></script>
+
+<script src="js/Models/CategoryModel.js"></script>
+<script src="js/Collections/CategoriesListCollection.js"></script>
+<script src="js/Views/CategoryListItemView.js"></script>
+<script src="js/Views/CategoriesListView.js"></script>
+
+<script src="js/Models/ClientModel.js"></script>
+<script src="js/Collections/ClientsListCollection.js"></script>
+<script src="js/Views/ClientListItemView.js"></script>
+<script src="js/Views/ClientsListView.js"></script>
+
+<script src="js/Models/RentModel.js"></script>
+<script src="js/Collections/RentsListCollection.js"></script>
+<script src="js/Views/RentListItemView.js"></script>
+<script src="js/Views/RentsListView.js"></script>
+
+<script src="js/Views/MovieDetailsView.js"></script>
+<script src="js/Views/ActorDetailsView.js"></script>
+<script src="js/Views/CategoryDetailsView.js"></script>
+<script src="js/Views/ClientDetailsView.js"></script>
+<script src="js/Views/RentDetailsView.js"></script>
+
+<script src="js/Views/MovieEditView.js"></script>
+<script src="js/Views/ActorEditView.js"></script>
+<script src="js/Views/CategoryEditView.js"></script>
+<script src="js/Views/ClientEditView.js"></script>
+<script src="js/Views/RentEditView.js"></script>
+
+<script src="js/Views/MovieNewView.js"></script>
+<script src="js/Views/ActorNewView.js"></script>
+<script src="js/Views/CategoryNewView.js"></script>
+<script src="js/Views/ClientNewView.js"></script>
+<script src="js/Views/RentNewView.js"></script>
+
+<script src="js/Views/BreadcrumbsView.js"></script>
+
+<script src="js/Views/LatestRentsListItemView.js"></script>
+<script src="js/Views/LatestRentsView.js"></script>
+
+<script src="js/Views/StatisticsView.js"></script>
+
+<script src="js/Routers/Router.js"></script>
+<!--<!(endif)-->
+
+<!--(if target dist)>
+<script src="js/libs.min.js"></script>
+<script src="js/app.min.js"></script>
+<!(endif)-->
+
+<script>
+    APP.init();
+</script>
+
+</body>
+</html>

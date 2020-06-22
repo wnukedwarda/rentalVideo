@@ -1,0 +1,21 @@
+<% if(this.model.isNew()) { %>
+<h3 class="app-heading"><i class="fa fa-plus"></i> Nowy aktor</h3>
+<% } else { %>
+<h3 class="app-heading"><i class="fa fa-edit"></i> Edycja aktora</h3>
+<% } %>
+
+<div class="app-form">
+    <form action="" id="new-actor">
+        <div class="app-form-field">
+            <label for="actor-name">Imię i nazwisko</label>
+            <input type="text" id="actor-name">
+        </div>
+
+        <div class="app-form-submit">
+            <button type="submit" class="btn">Zapisz</button>
+            <% if(!this.model.isNew()) { %>
+            <button type="button" class="btn special delete">Usuń</button>
+            <% } %>
+        </div>
+    </form>
+</div>

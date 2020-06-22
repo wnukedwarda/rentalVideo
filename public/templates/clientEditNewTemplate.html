@@ -1,0 +1,51 @@
+<% if(this.model.isNew()) { %>
+<h3 class="app-heading"><i class="fa fa-plus"></i> Nowy klient</h3>
+<% } else { %>
+<h3 class="app-heading"><i class="fa fa-edit"></i> Edycja klienta</h3>
+<% } %>
+
+<div class="app-form">
+    <form action="" id="new-client">
+        <div class="app-form-field">
+            <label for="client-first-name">Imię</label>
+            <input type="text" id="client-first-name" class="medium">
+        </div>
+
+        <div class="app-form-field">
+            <label for="client-last-name">Nazwisko</label>
+            <input type="text" id="client-last-name" class="medium">
+        </div>
+
+        <div class="app-form-field">
+            <label for="client-birth-date">Data urodzenia</label>
+            <input type="text" id="client-birth-date" class="short" placeholder="dd-mm-rrrr">
+        </div>
+
+        <div class="app-form-field">
+            <label for="client-id-number">Numer dowodu</label>
+            <input type="text" class="medium" id="client-id-number" placeholder="XXX000000">
+        </div>
+
+        <div class="app-form-field">
+            <label for="client-address">Adres</label>
+            <input type="text" id="client-address" placeholder="ul. Leśna 23">
+        </div>
+
+        <div class="app-form-field">
+            <label for="client-zip-code">Kod pocztowy</label>
+            <input type="text" id="client-zip-code" class="short" placeholder="xx-xxx">
+        </div>
+
+        <div class="app-form-field">
+            <label for="client-city">Miejscowość</label>
+            <input type="text" id="client-city" class="medium" placeholder="Nieistniejowice">
+        </div>
+
+        <div class="app-form-submit">
+            <button type="submit" class="btn">Zapisz</button>
+            <% if(!this.model.isNew()) { %>
+            <button type="button" class="btn special delete">Usuń</button>
+            <% } %>
+        </div>
+    </form>
+</div>
